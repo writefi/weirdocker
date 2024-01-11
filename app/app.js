@@ -1,10 +1,9 @@
 const http = require('http');
-//const http = require('node:http');
 
 const f = Math.random();
 
 const hostname = 'localhost';
-const port = 7054;
+const port = 8080;
 
 const server = http.createServer((req, res) => {
   res.statusCode = 200;
@@ -14,6 +13,6 @@ const server = http.createServer((req, res) => {
 );
 });
 
-server.listen(process.env.SERVER_PORT, () => {
-  console.log(`Server ${f} running at http://${hostname}:${port}/`);
+server.listen(port, () => {
+  console.log(`Server ${f} running on port ${port}/`);
 });
